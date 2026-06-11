@@ -1,0 +1,254 @@
+{
+  "players": [
+    { "id": "player-andrew",  "name": "andrew",  "display_name": "Andrew"  },
+    { "id": "player-jocelyn", "name": "jocelyn", "display_name": "Jocelyn" },
+    { "id": "player-rebekah", "name": "rebekah", "display_name": "Bekah"   },
+    { "id": "player-chris",   "name": "chris",   "display_name": "Chris"   },
+    { "id": "player-paul",    "name": "paul",    "display_name": "Paul"    },
+    { "id": "player-adit",    "name": "adit",    "display_name": "Adit"    },
+    { "id": "player-jackson", "name": "jackson",  "display_name": "Jackson" },
+    { "id": "player-dillon",  "name": "dillon",  "display_name": "Dillon"  },
+    { "id": "player-huzyfa",  "name": "huzyfa",  "display_name": "Huzyfa"  },
+    { "id": "player-iman",    "name": "iman",    "display_name": "Iman"    },
+    { "id": "player-brian",   "name": "brian",   "display_name": "Brian"   }
+  ],
+
+  "games": [
+    {
+      "id": "game-clank",
+      "name": "Clank!",
+      "type": "competitive",
+      "description": "Claim your treasures but don't attract the dragon in this deck-building dungeon race."
+    },
+    {
+      "id": "game-scythe",
+      "name": "Scythe",
+      "type": "competitive",
+      "description": "Five factions vie for dominance in a war-torn, mech-filled, dieselpunk 1920s Europe."
+    },
+    {
+      "id": "game-dominion",
+      "name": "Dominion",
+      "type": "competitive",
+      "description": "Acquire the most valuable lands by building your deck with treasure and power cards."
+    },
+    {
+      "id": "game-apiary",
+      "name": "Apiary",
+      "type": "competitive",
+      "description": "Hyper-intelligent bees take to outer space to build, explore, and grow."
+    },
+    {
+      "id": "game-terra-mystica",
+      "name": "Terra Mystica",
+      "type": "competitive",
+      "description": "Play fantastical factions. Expand your influence by terraforming and joining cults."
+    },
+    {
+      "id": "game-arcs",
+      "name": "Arcs",
+      "type": "competitive",
+      "description": "Rule the galaxy with your court, fleet, and cities."
+    },
+    {
+      "id": "game-diplomacy",
+      "name": "Diplomacy",
+      "type": "competitive",
+      "description": "Powers of post-Victorian Europe cooperate and clash to become master of the Continent."
+    },
+        {
+      "id": "game-quacks",
+      "name": "Quacks",
+      "type": "competitive",
+      "description": "Pull ingredients from your stock to make your pot bubble, but hopefully not explode!"
+    },
+    {
+      "id": "game-???",
+      "name": "??",
+      "type": "competitive",
+      "description": ""
+    },
+    {
+      "id": "game-dixit",
+      "name": "Dixit",
+      "type": "competitive",
+      "description": "Give the perfect clue so most (not all) players guess the right surreal image card."
+    },
+    {
+      "id": "game-machi-koro",
+      "name": "Machi Koro",
+      "type": "competitive",
+      "description": "As a newly elected mayor, develop a city and populate it with impressive landmarks."
+    },
+    {
+      "id": "game-mansions",
+      "name": "Mansions of Madness",
+      "type": "cooperative",
+      "description": "Cling to your sanity as you investigate Lovecraftian horrors."
+    },
+    {
+      "id": "game-sheriff",
+      "name": "Sheriff of Nottingham",
+      "type": "competitive",
+      "description": "Sell goods for profit, or risk losing it all by slipping contrabands in."
+    },
+    {
+      "id": "game-modern-art",
+      "name": "Modern Art",
+      "type": "competitive",
+      "description": "Four types of auctions challenge players in this classic game of art speculation."
+    },
+    {
+      "id": "game-root",
+      "name": "Root",
+      "type": "competitive",
+      "description": "Decide the fate of the woodland as asymmetric factions fight for contrasting goals."
+    },
+    {
+      "id": "game-earthborne-rangers",
+      "name": "Earthborne Rangers",
+      "type": "cooperative",
+      "description": "Explore the wilderness of the far future as rangers of a wondrous mountain valley."
+    }
+  ],
+
+  "sessions": [
+    {
+      "id": "session-legacy-001",
+      "game_id": "game-clank",
+      "date": "2023-04-15",
+      "is_legacy": true,
+      "quote": "I grabbed the dragon egg and ran. No regrets.",
+      "players": [
+        { "player_id": "player-andrew", "score": 94, "is_winner": true },
+        { "player_id": "player-huzyfa" },
+        { "player_id": "player-iman" }
+      ]
+    },
+
+    {
+      "id": "session-legacy-002",
+      "game_id": "game-root",
+      "date": "2023-06-03",
+      "is_legacy": true,
+      "players": [
+        { "player_id": "player-huzyfa", "is_winner": true },
+        { "player_id": "player-andrew" },
+        { "player_id": "player-brian" },
+        { "player_id": "player-iman" }
+      ]
+    },
+
+    {
+      "id": "session-legacy-003",
+      "game_id": "game-mansions",
+      "date": "2023-08-19",
+      "is_legacy": true,
+      "coop_result": "loss",
+      "quote": "We never found the third clue. The house won.",
+      "players": [
+        { "player_id": "player-andrew" },
+        { "player_id": "player-iman" },
+        { "player_id": "player-brian" }
+      ]
+    },
+
+    {
+      "id": "session-legacy-004",
+      "game_id": "game-clank",
+      "date": "2023-11-10",
+      "is_legacy": true,
+      "players": [
+        { "player_id": "player-brian",  "is_winner": true },
+        { "player_id": "player-andrew" },
+        { "player_id": "player-huzyfa" },
+        { "player_id": "player-iman" }
+      ]
+    },
+
+    {
+      "id": "session-legacy-005",
+      "game_id": "game-mansions",
+      "date": "2024-01-27",
+      "is_legacy": true,
+      "coop_result": "win",
+      "quote": "Barely made it out. Iman was one sanity point away from losing it.",
+      "players": [
+        { "player_id": "player-andrew" },
+        { "player_id": "player-huzyfa" },
+        { "player_id": "player-iman" }
+      ]
+    },
+
+    {
+      "_note": "LIVE — is_legacy: false. All player scores known. Mark winner(s) with is_winner: true."
+    },
+
+    {
+      "id": "session-live-001",
+      "game_id": "game-clank",
+      "date": "2024-09-14",
+      "is_legacy": false,
+      "quote": "Nobody expected Iman to pull the dragon egg. Nobody.",
+      "players": [
+        { "player_id": "player-iman",   "score": 107, "is_winner": true },
+        { "player_id": "player-andrew", "score": 88  },
+        { "player_id": "player-brian",  "score": 71  },
+        { "player_id": "player-huzyfa", "score": 63  }
+      ]
+    },
+
+    {
+      "_note": "TIE — two players both have is_winner: true."
+    },
+
+    {
+      "id": "session-live-002",
+      "game_id": "game-root",
+      "date": "2024-10-05",
+      "is_legacy": false,
+      "quote": "The Marquise and the Eyrie tied on 30. Nobody was satisfied.",
+      "players": [
+        { "player_id": "player-andrew", "score": 30, "is_winner": true },
+        { "player_id": "player-huzyfa", "score": 30, "is_winner": true },
+        { "player_id": "player-iman",   "score": 21 },
+        { "player_id": "player-brian",  "score": 17 }
+      ]
+    },
+
+    {
+      "_note": "CAMPAIGN / ONGOING — coop_result: in_progress means the session happened but the campaign has no result yet. No is_winner needed."
+    },
+
+    {
+      "id": "session-live-003",
+      "game_id": "game-mansions",
+      "date": "2024-11-23",
+      "is_legacy": false,
+      "coop_result": "in_progress",
+      "notes": "Session 2 of the Forbidden Alchemy campaign. Stopped mid-chapter 3.",
+      "players": [
+        { "player_id": "player-andrew" },
+        { "player_id": "player-brian" },
+        { "player_id": "player-iman" },
+        { "player_id": "player-huzyfa" }
+      ]
+    },
+
+    {
+      "id": "session-live-004",
+      "game_id": "game-mansions",
+      "date": "2024-12-07",
+      "is_legacy": false,
+      "coop_result": "win",
+      "notes": "Concluded the Forbidden Alchemy campaign. Three sessions total.",
+      "players": [
+        { "player_id": "player-andrew" },
+        { "player_id": "player-brian" },
+        { "player_id": "player-iman" },
+        { "player_id": "player-huzyfa" }
+      ]
+    }
+
+  ]
+}

@@ -1,0 +1,9 @@
+name = "hall-of-heroes"
+pages_build_output_dir = "./dist"
+compatibility_date = "2024-11-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "hall-of-heroes-db"
+# Run `wrangler d1 create hall-of-heroes-db` and paste the database_id here
+database_id = "1101149d-c571-45bc-a826-15dc267903ac"

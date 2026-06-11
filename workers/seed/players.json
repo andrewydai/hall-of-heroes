@@ -1,0 +1,13 @@
+[
+  { "id": "player-andrew",  "name": "andrew",  "display_name": "Andrew"  },
+  { "id": "player-jocelyn", "name": "jocelyn", "display_name": "Jocelyn" },
+  { "id": "player-rebekah", "name": "rebekah", "display_name": "Bekah"   },
+  { "id": "player-chris",   "name": "chris",   "display_name": "Chris"   },
+  { "id": "player-paul",    "name": "paul",    "display_name": "Paul"    },
+  { "id": "player-adit",    "name": "adit",    "display_name": "Adit"    },
+  { "id": "player-jackson", "name": "jackson", "display_name": "Jackson" },
+  { "id": "player-dillon",  "name": "dillon",  "display_name": "Dillon"  },
+  { "id": "player-huzyfa",  "name": "huzyfa",  "display_name": "Huzyfa"  },
+  { "id": "player-iman",    "name": "iman",    "display_name": "Iman"    },
+  { "id": "player-brian",   "name": "brian",   "display_name": "Brian"   }
+]

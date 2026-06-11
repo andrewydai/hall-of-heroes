@@ -1,0 +1,774 @@
+[
+  { "_note": "═══ SCYTHE (Image 1) ════════════════════════════════════════════" },
+  {
+    "game_id": "game-scythe",
+    "date": "2024-01-26",
+    "is_legacy": true,
+    "quote": "-Fights over ending game\n-Both are last 👁👄👁",
+    "players": [
+      { "player_id": "player-andrew", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-scythe",
+    "date": "2024-06-01",
+    "is_legacy": true,
+    "quote": "He can't win on Germany\nHe can't win on Russia\nHe can't win on Poland ← You are Here\nHe can't win on Crimea\nHe can't win on Nords",
+    "players": [
+      { "player_id": "player-andrew", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-scythe",
+    "date": "2026-01-25",
+    "is_legacy": true,
+    "quote": "meek pathetic pity max victory 89 points",
+    "players": [
+      { "player_id": "player-brian", "score": 89, "is_winner": true }
+    ]
+  },
+
+  { "_note": "═══ CLANK (Image 2) ═════════════════════════════════════════════" },
+
+  {
+    "game_id": "game-clank-catacombs",
+    "date": "2023-03-15",
+    "is_legacy": true,
+    "quote": "Secret tome mixer bee tee dubs",
+    "players": [
+      { "player_id": "player-huzyfa", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-clank-catacombs",
+    "date": "2023-03-22",
+    "is_legacy": true,
+    "quote": "Actual rat gameplay",
+    "players": [
+      { "player_id": "player-brian", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-clank-catacombs",
+    "date": "2023-04-05",
+    "is_legacy": true,
+    "quote": "Chris I got 140 this time. I mean come on...",
+    "players": [
+      { "player_id": "player-andrew", "score": 140, "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-clank-catacombs",
+    "date": "2023-07-28",
+    "is_legacy": true,
+    "quote": "I'm gonna go prisoner again and there's nothing you can do",
+    "players": [
+      { "player_id": "player-andrew", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-clank-catacombs",
+    "date": "2023-08-08",
+    "is_legacy": true,
+    "quote": "Won on 44 because brian is a murderer and a rat",
+    "players": [
+      { "player_id": "player-iman", "score": 44, "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-clank-catacombs",
+    "date": "2023-08-08",
+    "is_legacy": true,
+    "quote": "Clank maxing to die early strat",
+    "players": [
+      { "player_id": "player-iman", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-clank-catacombs",
+    "date": "2023-10-15",
+    "is_legacy": true,
+    "quote": "Won with prisoner again",
+    "players": [
+      { "player_id": "player-andrew", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-clank-catacombs",
+    "date": "2024-06-14",
+    "is_legacy": true,
+    "quote": "48 points by prisoner btw this strat may be busted (shoutout Chris w/ 69 points btw total)",
+    "players": [
+      { "player_id": "player-huzyfa", "score": 128, "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-clank-catacombs",
+    "date": "2025-04-27",
+    "is_legacy": true,
+    "quote": "Cheater! Alert! 134!",
+    "players": [
+      { "player_id": "player-andrew", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-clank-catacombs",
+    "date": "2025-12-12",
+    "is_legacy": true,
+    "quote": "Brian strives to ruin me and fails - 147 win (shoutout Brian w/ 62 total aka worse than chris)",
+    "players": [
+      { "player_id": "player-iman", "score": 147, "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-clank-catacombs",
+    "date": "2026-04-28",
+    "is_legacy": true,
+    "quote": "Always greed before leaving, you'll never get hit and always get more artifacts for free. I've been in the depths for 20 years.",
+    "players": [
+      { "player_id": "player-iman", "score": 170, "is_winner": true }
+    ]
+  },
+
+  { "_note": "═══ DOMINION (Image 3) ══════════════════════════════════════════" },
+
+  {
+    "game_id": "game-dominion",
+    "date": "2023-09-17",
+    "is_legacy": true,
+    "quote": "Welcome to my dominion",
+    "players": [
+      { "player_id": "player-brian", "score": 33, "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-dominion",
+    "date": "2023-09-17",
+    "is_legacy": true,
+    "quote": "Won fueled by 3 bowls of spaghetti",
+    "players": [
+      { "player_id": "player-huzyfa", "score": 43, "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-dominion",
+    "date": "2025-01-15",
+    "is_legacy": true,
+    "quote": "Cardistry Nation!!",
+    "players": [
+      { "player_id": "player-huzyfa", "score": 30, "is_winner": true }
+    ]
+  },
+
+  { "_note": "═══ APIARY (Image 4) ════════════════════════════════════════════" },
+
+  {
+    "game_id": "game-apiary",
+    "date": "2025-02-24",
+    "is_legacy": true,
+    "quote": "Apiary was made for the farmmaxxing farmcels like me.",
+    "players": [
+      { "player_id": "player-iman", "score": 109, "is_winner": true }
+    ]
+  },
+
+  { "_note": "═══ TERRA MYSTICA (Image 5) ══════════════════════════════════════" },
+
+  {
+    "game_id": "game-terra-mystica",
+    "date": "2022-10-27",
+    "is_legacy": true,
+    "quote": "I got a 5 on APUSH",
+    "players": [
+      { "player_id": "player-andrew", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-terra-mystica",
+    "date": "2022-11-20",
+    "is_legacy": true,
+    "quote": "I'm about to demonize someone, they know who they are",
+    "players": [
+      { "player_id": "player-andrew", "is_winner": true }
+    ]
+  },
+
+  { "_note": "═══ ARCS (Image 6) ══════════════════════════════════════════════" },
+
+  {
+    "game_id": "game-arcs",
+    "date": "2024-12-06",
+    "is_legacy": true,
+    "quote": "As a true empath I felt Brian's pain turn 1. And 2. And 5.",
+    "players": [
+      { "player_id": "player-andrew", "is_winner": true }
+    ]
+  },
+
+  { "_note": "═══ QUACKS (Image 7) ════════════════════════════════════════════" },
+
+  {
+    "game_id": "game-quacks",
+    "date": "2024-01-13",
+    "is_legacy": true,
+    "quote": "While you contemplate drawing a bomb, I open my hand to a pumpkin",
+    "players": [
+      { "player_id": "player-andrew", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-quacks",
+    "date": "2024-01-14",
+    "is_legacy": true,
+    "quote": "Biatchazz135",
+    "players": [
+      { "player_id": "player-paul", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-quacks",
+    "date": "2024-03-07",
+    "is_legacy": true,
+    "quote": "Bitchazz7285",
+    "players": [
+      { "player_id": "player-paul", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-quacks",
+    "date": "2024-03-08",
+    "is_legacy": true,
+    "quote": "The Rumbling (pumpkins)",
+    "players": [
+      { "player_id": "player-andrew", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-quacks",
+    "date": "2024-03-16",
+    "is_legacy": true,
+    "quote": "Lets GOO!",
+    "players": [
+      { "player_id": "player-andrew", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-quacks",
+    "date": "2024-03-24",
+    "is_legacy": true,
+    "quote": "The power of Caffè Nero compels me.",
+    "players": [
+      { "player_id": "player-rebekah", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-quacks",
+    "date": "2025-05-04",
+    "is_legacy": true,
+    "quote": "I'm cheating",
+    "players": [
+      { "player_id": "player-chris", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-quacks",
+    "date": "2025-06-30",
+    "is_legacy": true,
+    "quote": "Iman: oppressed\nBrian: slop\nHuzyfa: Last\nAndrew: Devil",
+    "players": [
+      { "player_id": "player-andrew", "is_winner": true }
+    ]
+  },
+
+  { "_note": "═══ SMALL WORLD (Image 8) ═══════════════════════════════════════" },
+
+  {
+    "game_id": "game-small-world",
+    "date": "2022-08-21",
+    "is_legacy": true,
+    "quote": "Check ur hood",
+    "players": [
+      { "player_id": "player-andrew", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-small-world",
+    "date": "2022-11-13",
+    "is_legacy": true,
+    "quote": "\"warm fruit\" - Chris",
+    "players": [
+      { "player_id": "player-andrew", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-small-world",
+    "date": "2023-01-28",
+    "is_legacy": true,
+    "quote": "W",
+    "players": [
+      { "player_id": "player-chris", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-small-world",
+    "date": "2023-11-06",
+    "is_legacy": true,
+    "quote": "I get 17 points in one turn this game",
+    "players": [
+      { "player_id": "player-huzyfa", "is_winner": true }
+    ]
+  },
+
+  { "_note": "═══ DIXIT (Image 9) ═════════════════════════════════════════════" },
+  { "_note": "MISSING PLAYERS: Emily (9/28/19, 9/1/22) and Alex O. (4/3/22) are not in players.json — add them if desired." },
+  {
+    "game_id": "game-dixit",
+    "date": "2019-09-28",
+    "is_legacy": true,
+    "quote": "Andrew wins",
+    "players": [
+      { "player_id": "player-andrew", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-dixit",
+    "date": "2019-09-28",
+    "is_legacy": true,
+    "quote": "biggest peepee ever",
+    "players": [
+      { "player_id": "player-paul", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-dixit",
+    "date": "2019-09-28",
+    "is_legacy": true,
+    "quote": "bitch ass",
+    "players": [
+      { "player_id": "player-brian", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-dixit",
+    "date": "2020-02-29",
+    "is_legacy": true,
+    "quote": "7 folds",
+    "players": [
+      { "player_id": "player-chris", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-dixit",
+    "date": "2022-09-17",
+    "is_legacy": true,
+    "quote": "Bookworm, 8 folds babyyyyy",
+    "players": [
+      { "player_id": "player-chris", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-dixit",
+    "date": "2024-12-17",
+    "is_legacy": true,
+    "quote": "I'm in Andrew's head 😈 hehehe",
+    "players": [
+      { "player_id": "player-jocelyn", "is_winner": true }
+    ]
+  },
+
+  { "_note": "═══ MACHI KORO (Image 10) ════════════════════════════════════════" },
+  {
+    "game_id": "game-machi-koro",
+    "date": "2021-09-28",
+    "is_legacy": true,
+    "quote": "wald gang",
+    "players": [
+      { "player_id": "player-andrew", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-machi-koro",
+    "date": "2022-04-28",
+    "is_legacy": true,
+    "quote": "Penis",
+    "players": [
+      { "player_id": "player-paul", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-machi-koro",
+    "date": "2022-12-12",
+    "is_legacy": true,
+    "quote": "café",
+    "players": [
+      { "player_id": "player-chris", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-machi-koro",
+    "date": "2023-03-26",
+    "is_legacy": true,
+    "quote": "Erm what the flip?",
+    "players": [
+      { "player_id": "player-huzyfa", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-machi-koro",
+    "date": "2024-03-29",
+    "is_legacy": true,
+    "quote": "These dice are hot!!",
+    "players": [
+      { "player_id": "player-andrew", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-machi-koro",
+    "date": "2023-04-20",
+    "is_legacy": true,
+    "quote": "3PEAT",
+    "players": [
+      { "player_id": "player-andrew", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-machi-koro",
+    "date": "2023-04-20",
+    "is_legacy": true,
+    "quote": "FLINALLY",
+    "players": [
+      { "player_id": "player-adit", "is_winner": true }
+    ]
+  },
+
+  { "_note": "═══ MANSIONS OF MADNESS (Image 11) ══════════════════════════════" },
+  {
+    "game_id": "game-mansions",
+    "date": "2024-04-06",
+    "is_legacy": true,
+    "quote": "\"Make money, kill ghosts\" -Agatha \"Sleeping Puma\" Crane",
+    "coop_result": "win",
+    "players": [
+      { "player_id": "player-iman" },
+      { "player_id": "player-brian" },
+      { "player_id": "player-dillon" },
+      { "player_id": "player-jocelyn" },
+      { "player_id": "player-andrew" }
+    ]
+  },
+  {
+    "game_id": "game-mansions",
+    "date": "2024-05-04",
+    "is_legacy": true,
+    "quote": "\"Money is everything. All I had to do was watch the world burn.\" -Preston Fairmont, The Millionaire (character)",
+    "coop_result": "win",
+    "players": [
+      { "player_id": "player-iman" },
+      { "player_id": "player-brian" },
+      { "player_id": "player-dillon" },
+      { "player_id": "player-jocelyn" },
+      { "player_id": "player-andrew" }
+    ]
+  },
+  {
+    "game_id": "game-mansions",
+    "date": "2026-05-24",
+    "quote": "\"Intnah\" -Homeless Wendy Adams",
+    "is_legacy": true,
+    "coop_result": "loss",
+    "players": [
+      { "player_id": "player-andrew" },
+      { "player_id": "player-iman" },
+      { "player_id": "player-brian" }
+    ]
+  },
+
+  { "_note": "═══ SHERIFF OF NOTTINGHAM (Image 12) ════════════════════════════" },
+
+  {
+    "game_id": "game-sheriff",
+    "date": "2020-02-29",
+    "is_legacy": true,
+    "quote": "7 folds",
+    "players": [
+      { "player_id": "player-chris", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-sheriff",
+    "date": "2024-01-13",
+    "is_legacy": true,
+    "quote": "Apple max strat wins (27 apples btw)",
+    "players": [
+      { "player_id": "player-iman", "is_winner": true }
+    ]
+  },
+
+  { "_note": "═══ MODERN ART (Image 13) ═══════════════════════════════════════" },
+
+  {
+    "game_id": "game-modern-art",
+    "date": "2024-06-01",
+    "is_legacy": true,
+    "quote": "Late game Manuel Market makes so much sense",
+    "players": [
+      { "player_id": "player-brian", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-modern-art",
+    "date": "2024-06-01",
+    "is_legacy": true,
+    "quote": "Social manipulation games are where I shine",
+    "players": [
+      { "player_id": "player-iman", "score": 483, "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-modern-art",
+    "date": "2024-02-15",
+    "is_legacy": true,
+    "quote": "Adventurefuls for hire",
+    "players": [
+      { "player_id": "player-andrew", "score": 436, "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-modern-art",
+    "date": "2025-03-06",
+    "is_legacy": true,
+    "quote": "My parlay may have lost, but I didn't.",
+    "players": [
+      { "player_id": "player-rebekah", "score": 432, "is_winner": true }
+    ]
+  },
+
+  { "_note": "═══ ROOT (Image 14) ══════════════════════════════════════════════" },
+
+  {
+    "game_id": "game-root",
+    "date": "2023-01-06",
+    "is_legacy": true,
+    "quote": "I'm drowning",
+    "players": [
+      { "player_id": "player-andrew", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-root",
+    "date": "2023-01-07",
+    "is_legacy": true,
+    "quote": "Tricky Dynasty",
+    "players": [
+      { "player_id": "player-brian", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-root",
+    "date": "2023-01-14",
+    "is_legacy": true,
+    "quote": "Woodland Alliance expert btw check my mastery points",
+    "players": [
+      { "player_id": "player-huzyfa", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-root",
+    "date": "2023-01-21",
+    "is_legacy": true,
+    "quote": "Everything was by design my design",
+    "players": [
+      { "player_id": "player-andrew", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-root",
+    "date": "2023-01-21",
+    "is_legacy": true,
+    "quote": "The Keep never fails (First recorded Marquis win btw)",
+    "players": [
+      { "player_id": "player-huzyfa", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-root",
+    "date": "2023-02-04",
+    "is_legacy": true,
+    "quote": "Coalition gaaaang",
+    "players": [
+      { "player_id": "player-iman", "is_winner": true },
+      { "player_id": "player-huzyfa", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-root",
+    "date": "2023-02-04",
+    "is_legacy": true,
+    "quote": "Why am I still here",
+    "players": [
+      { "player_id": "player-iman", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-root",
+    "date": "2023-02-19",
+    "is_legacy": true,
+    "quote": "Chad builder vs virgin brigadier",
+    "players": [
+      { "player_id": "player-andrew", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-root",
+    "date": "2023-02-22",
+    "is_legacy": true,
+    "quote": "Elite Eyrie player",
+    "players": [
+      { "player_id": "player-andrew", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-root",
+    "date": "2023-02-24",
+    "is_legacy": true,
+    "quote": "Ban dominance please for the love of god",
+    "players": [
+      { "player_id": "player-huzyfa", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-root",
+    "date": "2023-03-14",
+    "is_legacy": true,
+    "quote": ":3",
+    "players": [
+      { "player_id": "player-jocelyn", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-root",
+    "date": "2023-04-08",
+    "is_legacy": true,
+    "quote": "rat gameplay in every game (Duchy)",
+    "players": [
+      { "player_id": "player-brian", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-root",
+    "date": "2023-06-08",
+    "is_legacy": true,
+    "quote": "First advanced setup win btw (Eyrie)",
+    "players": [
+      { "player_id": "player-huzyfa", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-root",
+    "date": "2023-06-11",
+    "is_legacy": true,
+    "quote": "https://docs.google.com/document/d/1-A7WduQSRVVmIDyGEDQY_UKNWn5AbMylS2KOF06Px7c/edit?usp=sharing",
+    "players": [
+      { "player_id": "player-brian", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-root",
+    "date": "2023-08-04",
+    "is_legacy": true,
+    "quote": "I play Corvid and win.",
+    "players": [
+      { "player_id": "player-andrew", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-root",
+    "date": "2023-08-05",
+    "is_legacy": true,
+    "quote": "Easy.",
+    "players": [
+      { "player_id": "player-andrew", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-root",
+    "date": "2023-12-09",
+    "is_legacy": true,
+    "quote": "The Boy and the Keep.",
+    "players": [
+      { "player_id": "player-jackson", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-root",
+    "date": "2023-12-10",
+    "is_legacy": true,
+    "quote": "The Boy and the Warlord.",
+    "players": [
+      { "player_id": "player-jackson", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-root",
+    "date": "2023-12-11",
+    "is_legacy": true,
+    "quote": "The Boy and the Extortion.",
+    "players": [
+      { "player_id": "player-jackson", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-root",
+    "date": "2024-03-08",
+    "is_legacy": true,
+    "quote": "Mole city never dies (shoutout Biatchazz)",
+    "players": [
+      { "player_id": "player-huzyfa", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-root",
+    "date": "2024-03-30",
+    "is_legacy": true,
+    "quote": "Most legitimate Corvid win, thank you Dillon",
+    "players": [
+      { "player_id": "player-brian", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-root",
+    "date": "2024-04-14",
+    "is_legacy": true,
+    "quote": "Another Day, another failed dominance from Dillon (Lord of 100s)",
+    "players": [
+      { "player_id": "player-huzyfa", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-root",
+    "date": "2024-08-24",
+    "is_legacy": true,
+    "quote": "Let it be known this is the closest dominance has come to winning, but I'm just better (Riverfolk)",
+    "players": [
+      { "player_id": "player-huzyfa", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-root",
+    "date": "2026-02-12",
+    "is_legacy": true,
+    "quote": "Woodland win by the skin of my teeth nerf coffin makers",
+    "players": [
+      { "player_id": "player-brian", "is_winner": true }
+    ]
+  },
+  {
+    "game_id": "game-root",
+    "date": "2026-04-11",
+    "is_legacy": true,
+    "quote": "The frogs are not germs, a plague, a problem to solve or any other derogatory name they have been called. They are a loved people of the forest community. Justice for frogs",
+    "players": [
+      { "player_id": "player-iman", "is_winner": true }
+    ]
+  }
+]

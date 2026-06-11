@@ -1,0 +1,135 @@
+[
+  {
+    "id": "game-clank-catacombs",
+    "name": "Clank!: Catacombs",
+    "type": "competitive",
+    "icon_path": "clank_catacombs",
+    "description": "Deck-building adventure meets tile-laying in the newest incarnation of Clank!"
+  },
+  {
+    "id": "game-scythe",
+    "name": "Scythe",
+    "type": "competitive",
+    "icon_path": "scythe",
+    "description": "Five factions vie for dominance in a war-torn, mech-filled, dieselpunk 1920s Europe."
+  },
+  {
+    "id": "game-dominion",
+    "name": "Dominion",
+    "type": "competitive",
+    "icon_path": "dominion",
+    "description": "Acquire the most valuable lands by building your deck with treasure and power cards."
+  },
+  {
+    "id": "game-apiary",
+    "name": "Apiary",
+    "type": "competitive",
+    "icon_path": "apiary",
+    "description": "Hyper-intelligent bees take to outer space to build, explore, and grow."
+  },
+  {
+    "id": "game-terra-mystica",
+    "name": "Terra Mystica",
+    "type": "competitive",
+    "icon_path": "terra_mystica",
+    "description": "Play fantastical factions. Expand your influence by terraforming and joining cults."
+  },
+  {
+    "id": "game-arcs",
+    "name": "Arcs",
+    "type": "competitive",
+    "icon_path": "arcs",
+    "description": "Rule the galaxy with your court, fleet, and cities."
+  },
+  {
+    "id": "game-diplomacy",
+    "name": "Diplomacy",
+    "type": "competitive",
+    "icon_path": "diplomacy",
+    "description": "Powers of post-Victorian Europe cooperate and clash to become master of the Continent."
+  },
+  {
+    "id": "game-quacks",
+    "name": "Quacks",
+    "type": "competitive",
+    "icon_path": "quacks",
+    "description": "Pull ingredients from your stock to make your pot bubble, but hopefully not explode!"
+  },
+  {
+    "id": "game-small-world",
+    "name": "Small World",
+    "type": "competitive",
+    "icon_path": "small_world",
+    "description": "Control one fantasy race after another to expand quickly throughout the land."
+  },
+  {
+    "id": "game-dixit",
+    "name": "Dixit",
+    "type": "competitive",
+    "icon_path": "dixit",
+    "description": "Give the perfect clue so most (not all) players guess the right surreal image card."
+  },
+  {
+    "id": "game-machi-koro",
+    "name": "Machi Koro",
+    "type": "competitive",
+    "icon_path": "machi_koro",
+    "description": "As a newly elected mayor, develop a city and populate it with impressive landmarks."
+  },
+  {
+    "id": "game-mansions",
+    "name": "Mansions of Madness",
+    "type": "cooperative",
+    "icon_path": "mansions",
+    "description": "Cling to your sanity as you investigate Lovecraftian horrors."
+  },
+  {
+    "id": "game-sheriff",
+    "name": "Sheriff of Nottingham",
+    "type": "competitive",
+    "icon_path": "sheriff",
+    "description": "Sell goods for profit, or risk losing it all by slipping contrabands in."
+  },
+  {
+    "id": "game-modern-art",
+    "name": "Modern Art",
+    "type": "competitive",
+    "icon_path": "modern_art",
+    "description": "Four types of auctions challenge players in this classic game of art speculation."
+  },
+  {
+    "id": "game-root",
+    "name": "Root",
+    "type": "competitive",
+    "icon_path": "root",
+    "description": "Decide the fate of the woodland as asymmetric factions fight for contrasting goals."
+  },
+  {
+    "id": "game-earthborne-rangers",
+    "name": "Earthborne Rangers",
+    "type": "cooperative",
+    "icon_path": "earthborne_rangers",
+    "description": "Explore the wilderness of the far future as rangers of a wondrous mountain valley."
+  },
+  {
+    "id": "game-dutch-blitz",
+    "name": "Dutch Blitz",
+    "type": "competitive",
+    "icon_path": "dutch_blitz",
+    "description": "Be the first to play all of your cards in this fast-paced solitaire style game."
+  },
+  {
+    "id": "game-trump",
+    "name": "Trump",
+    "type": "competitive",
+    "icon_path": "trump",
+    "description": "Score points on bids in a classic trick-taking game focused on a trump card each round."
+  },
+  {
+    "id": "game-chinese-poker",
+    "name": "Chinese Poker",
+    "type": "competitive",
+    "icon_path": "chinese_poker",
+    "description": "A game of getting rid of your hands quicker than others with better poker hands."
+  }
+]

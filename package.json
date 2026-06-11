@@ -1,0 +1,36 @@
+{
+  "name": "hall-of-heroes",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:api": "wrangler pages dev --proxy 5173",
+    "build": "tsc -p tsconfig.app.json && vite build",
+    "preview": "wrangler pages dev dist",
+    "deploy": "npm run build && wrangler pages deploy dist",
+    "db:migrate": "wrangler d1 execute hall-of-heroes-db --local --file=workers/schema.sql",
+    "db:migrate:remote": "wrangler d1 execute hall-of-heroes-db --file=workers/schema.sql",
+    "db:seed": "npx tsx workers/seed.ts"
+  },
+  "dependencies": {
+    "hono": "^4.6.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.27.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241112.0",
+    "@types/node": "^25.9.1",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.3",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.15",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11",
+    "wrangler": "^3.85.0"
+  }
+}

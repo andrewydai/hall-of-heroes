@@ -1,0 +1,4 @@
+# Copy this to .dev.vars (which is gitignored) and fill in your values.
+# Wrangler reads .dev.vars for local development environment variables.
+
+PASSCODE=your-passcode-here
