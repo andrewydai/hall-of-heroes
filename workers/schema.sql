@@ -70,16 +70,16 @@ CREATE INDEX IF NOT EXISTS idx_trivia_date ON trivia_scores(date);
 -- If your DB was created before these columns existed, run these:
 --
 -- Add is_legacy (sessions):
---   wrangler d1 execute hall-of-heroes-db --local  --command "ALTER TABLE sessions ADD COLUMN is_legacy INTEGER NOT NULL DEFAULT 0"
---   wrangler d1 execute hall-of-heroes-db --remote --command "ALTER TABLE sessions ADD COLUMN is_legacy INTEGER NOT NULL DEFAULT 0"
+--   wrangler d1 execute tabletop-tales-db --local  --command "ALTER TABLE sessions ADD COLUMN is_legacy INTEGER NOT NULL DEFAULT 0"
+--   wrangler d1 execute tabletop-tales-db --remote --command "ALTER TABLE sessions ADD COLUMN is_legacy INTEGER NOT NULL DEFAULT 0"
 --
 -- Add is_winner (session_players):
---   wrangler d1 execute hall-of-heroes-db --local  --command "ALTER TABLE session_players ADD COLUMN is_winner INTEGER NOT NULL DEFAULT 0"
---   wrangler d1 execute hall-of-heroes-db --remote --command "ALTER TABLE session_players ADD COLUMN is_winner INTEGER NOT NULL DEFAULT 0"
+--   wrangler d1 execute tabletop-tales-db --local  --command "ALTER TABLE session_players ADD COLUMN is_winner INTEGER NOT NULL DEFAULT 0"
+--   wrangler d1 execute tabletop-tales-db --remote --command "ALTER TABLE session_players ADD COLUMN is_winner INTEGER NOT NULL DEFAULT 0"
 --
 -- victor_player_id has been removed. For existing DBs it will simply be
 -- ignored by queries — no DROP COLUMN needed in SQLite.
 --
 -- Add trivia_scores table:
---   wrangler d1 execute hall-of-heroes-db --local  --command "CREATE TABLE IF NOT EXISTS trivia_scores (date TEXT NOT NULL, player_id TEXT NOT NULL REFERENCES players(id), score INTEGER NOT NULL DEFAULT 0, q1_correct INTEGER NOT NULL DEFAULT 0, q2_correct INTEGER NOT NULL DEFAULT 0, q3_correct INTEGER NOT NULL DEFAULT 0, submitted_at TEXT NOT NULL, PRIMARY KEY (date, player_id))"
---   wrangler d1 execute hall-of-heroes-db --remote --command "CREATE TABLE IF NOT EXISTS trivia_scores (date TEXT NOT NULL, player_id TEXT NOT NULL REFERENCES players(id), score INTEGER NOT NULL DEFAULT 0, q1_correct INTEGER NOT NULL DEFAULT 0, q2_correct INTEGER NOT NULL DEFAULT 0, q3_correct INTEGER NOT NULL DEFAULT 0, submitted_at TEXT NOT NULL, PRIMARY KEY (date, player_id))"
+--   wrangler d1 execute tabletop-tales-db --local  --command "CREATE TABLE IF NOT EXISTS trivia_scores (date TEXT NOT NULL, player_id TEXT NOT NULL REFERENCES players(id), score INTEGER NOT NULL DEFAULT 0, q1_correct INTEGER NOT NULL DEFAULT 0, q2_correct INTEGER NOT NULL DEFAULT 0, q3_correct INTEGER NOT NULL DEFAULT 0, submitted_at TEXT NOT NULL, PRIMARY KEY (date, player_id))"
+--   wrangler d1 execute tabletop-tales-db --remote --command "CREATE TABLE IF NOT EXISTS trivia_scores (date TEXT NOT NULL, player_id TEXT NOT NULL REFERENCES players(id), score INTEGER NOT NULL DEFAULT 0, q1_correct INTEGER NOT NULL DEFAULT 0, q2_correct INTEGER NOT NULL DEFAULT 0, q3_correct INTEGER NOT NULL DEFAULT 0, submitted_at TEXT NOT NULL, PRIMARY KEY (date, player_id))"

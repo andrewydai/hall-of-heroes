@@ -132,11 +132,13 @@ for (const [idx, s] of sessions.entries()) {
 // Execute
 // ---------------------------------------------------------------------------
 
+const remote = process.argv.includes('--remote')
 const tmpFile = path.join(__dirname, '_seed_tmp.sql')
 fs.writeFileSync(tmpFile, statements.join('\n'))
 
-console.log(`Seeding ${players.length} players, ${games.length} games, ${sessions.length} sessions…`)
-execSync(`npx wrangler d1 execute hall-of-heroes-db --local --file=${tmpFile}`, { stdio: 'inherit' })
+console.log(`Seeding ${players.length} players, ${games.length} games, ${sessions.length} sessions… (${remote ? 'remote' : 'local'})`)
+const target = remote ? '--remote' : '--local'
+execSync(`npx wrangler d1 execute tabletop-tales-db ${target} --file=${tmpFile}`, { stdio: 'inherit' })
 
 fs.unlinkSync(tmpFile)
 console.log('Done.')
