@@ -715,8 +715,8 @@ app.get('/trivia/leaderboard', async (c) => {
 const root = new Hono<{ Bindings: Bindings }>()
 root.route('/api', app)
 root.get('*', (c) => {
-  if (!c.env.ASSETS) return c.notFound()
-  return c.env.ASSETS.fetch(c.req.raw)
+  if (c.env.ASSETS) return c.env.ASSETS.fetch(c.req.raw)
+  return c.notFound()
 })
 
 export default root
