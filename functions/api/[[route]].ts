@@ -714,6 +714,9 @@ app.get('/trivia/leaderboard', async (c) => {
 // for all React Router client-side routes (e.g. /sessions, /players/:id).
 const root = new Hono<{ Bindings: Bindings }>()
 root.route('/api', app)
-root.get('*', (c) => c.env.ASSETS.fetch(c.req.raw))
+root.get('*', (c) => {
+  if (!c.env.ASSETS) return c.notFound()
+  return c.env.ASSETS.fetch(c.req.raw)
+})
 
 export default root
