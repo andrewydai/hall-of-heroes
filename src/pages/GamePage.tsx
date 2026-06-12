@@ -7,7 +7,7 @@ import StatCard from '../components/StatCard'
 import Pagination from '../components/Pagination'
 import { useApi } from '../hooks/useApi'
 import { api } from '../lib/api'
-import { resolveGameImage } from '../lib/avatar'
+import { resolveGameImage, resolveAvatar } from '../lib/avatar'
 import type { CoopResult } from '../types'
 
 const PAGE_SIZE = 10
@@ -127,9 +127,24 @@ export default function GamePage() {
                       "{q.quote}"
                     </p>
                     <div className="flex items-center justify-between mt-2 gap-2">
-                      <span className="text-xs truncate">
-                        <QuoteOutcome victorNames={q.victor_names} coopResult={q.coop_result} />
-                      </span>
+                      <div className="flex items-center gap-1.5 min-w-0">
+                        {q.victor_avatars && (
+                          <div className="flex shrink-0">
+                            {q.victor_avatars.split(',').map((url, i) => (
+                              <img
+                                key={i}
+                                src={resolveAvatar(url || null)}
+                                alt=""
+                                className="rounded border border-blue-900"
+                                style={{ width: 20, height: 20, imageRendering: 'pixelated', marginLeft: i > 0 ? -6 : 0 }}
+                              />
+                            ))}
+                          </div>
+                        )}
+                        <span className="text-xs truncate">
+                          <QuoteOutcome victorNames={q.victor_names} coopResult={q.coop_result} />
+                        </span>
+                      </div>
                       <div className="flex items-center gap-1.5 shrink-0">
                         <span className="text-blue-500 text-xs">{formatDate(q.date)}</span>
                         <span className="text-blue-500 text-sm">→</span>

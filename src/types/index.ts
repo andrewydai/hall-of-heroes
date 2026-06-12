@@ -66,6 +66,7 @@ export interface PlayerSession {
   game_id: string
   game_name: string
   game_type: GameType
+  game_icon_path: string | null
   coop_result: CoopResult | null
   is_winner: number  // SQLite 0 | 1
   is_legacy: number  // SQLite 0 | 1
@@ -123,6 +124,7 @@ export interface GameStats {
     session_id: string
     date: string
     victor_names: string | null
+    victor_avatars: string | null  // comma-separated avatar_url values
     coop_result: CoopResult | null
   }>
 }

@@ -11,7 +11,7 @@ type Bindings = {
   ASSETS: Fetcher
 }
 
-const app = new Hono<{ Bindings: Bindings }>().basePath('/api')
+const app = new Hono<{ Bindings: Bindings }>()
 
 // ---------------------------------------------------------------------------
 // Auth middleware
@@ -43,7 +43,7 @@ function slugify(str: string): string {
 
 app.post('/auth/login', async (c) => {
   const { passcode } = await c.req.json<{ passcode: string }>()
-  if (passcode !== c.env.PASSCODE) {
+  if (passcode !== c.env.PASSCODE?.trim()) {
     return c.json({ error: 'Wrong passcode' }, 401)
   }
   setCookie(c, 'hoh_session', 'authenticated', {
@@ -64,7 +64,7 @@ app.post('/auth/logout', (c) => {
 
 app.post('/auth/admin-login', async (c) => {
   const { passcode } = await c.req.json<{ passcode: string }>()
-  if (passcode !== c.env.ADMIN_PASSCODE) {
+  if (passcode !== c.env.ADMIN_PASSCODE?.trim()) {
     return c.json({ error: 'Wrong passcode' }, 401)
   }
   setCookie(c, 'hoh_admin_session', 'authenticated', {
@@ -241,7 +241,7 @@ app.get('/players/:id/stats', async (c) => {
   // and the comma-separated winner names for display.
   const { results: sessionRows } = await c.env.DB.prepare(`
     SELECT s.id, s.date, s.quote, s.coop_result, s.is_legacy,
-           g.id as game_id, g.name as game_name, g.type as game_type,
+           g.id as game_id, g.name as game_name, g.type as game_type, g.icon_path as game_icon_path,
            sp_self.is_winner,
            GROUP_CONCAT(
              CASE WHEN sp_w.is_winner = 1
@@ -365,7 +365,12 @@ app.get('/games/:id/stats', async (c) => {
              CASE WHEN sp.is_winner = 1
                THEN COALESCE(p.display_name, p.name)
                ELSE NULL END
-           ) as victor_names
+           ) as victor_names,
+           GROUP_CONCAT(
+             CASE WHEN sp.is_winner = 1
+               THEN COALESCE(p.avatar_url, 'unknown_player')
+               ELSE NULL END
+           ) as victor_avatars
     FROM sessions s
     LEFT JOIN session_players sp ON sp.session_id = s.id
     LEFT JOIN players p          ON p.id = sp.player_id
@@ -398,6 +403,7 @@ app.get('/games/:id/stats', async (c) => {
       session_id: s.id,
       date: s.date,
       victor_names: s.victor_names ?? null,
+      victor_avatars: s.victor_avatars ?? null,
       coop_result: s.coop_result ?? null,
     }))
 
@@ -704,8 +710,10 @@ app.get('/trivia/leaderboard', async (c) => {
   return c.json(results)
 })
 
-// Pass unmatched routes to the asset server so React Router's client-side
-// routes (e.g. /sessions, /players/:id) still receive index.html.
-app.get('*', (c) => c.env.ASSETS.fetch(c.req.raw))
+// Root app: mount API routes under /api, then fall through to static assets
+// for all React Router client-side routes (e.g. /sessions, /players/:id).
+const root = new Hono<{ Bindings: Bindings }>()
+root.route('/api', app)
+root.get('*', (c) => c.env.ASSETS.fetch(c.req.raw))
 
-export default app
+export default root

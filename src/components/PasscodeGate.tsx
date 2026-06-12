@@ -84,7 +84,7 @@ export default function PasscodeGate({ children }: { children: ReactNode }) {
             ].join(' ')}
             style={{ fontSize: '9px' }}
           >
-            {submitting ? 'Entering…' : 'Enter the Hall'}
+            {submitting ? 'Entering…' : 'Enter'}
           </button>
         </form>
       </div>

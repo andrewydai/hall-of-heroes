@@ -9,7 +9,7 @@ import Pagination from '../components/Pagination'
 import { useApi } from '../hooks/useApi'
 import { api } from '../lib/api'
 import type { PlayerSession } from '../types'
-import { resolveAvatar } from '../lib/avatar'
+import { resolveAvatar, resolveGameImage } from '../lib/avatar'
 import { computeBadges } from '../lib/badges'
 
 function formatDate(dateStr: string) {
@@ -249,7 +249,15 @@ export default function PlayerPage() {
                         className={`block rounded-lg p-3 border bg-[#060a23]/80 hover:bg-white/5 transition-colors overflow-hidden ${sessionBorderClass(session)}`}
                       >
                         <div className="flex items-center justify-between gap-2">
-                          <span className="text-blue-100 text-sm truncate">{session.game_name}</span>
+                          <div className="flex items-center gap-2 min-w-0">
+                            <img
+                              src={resolveGameImage(session.game_icon_path)}
+                              alt=""
+                              className="shrink-0 rounded object-contain"
+                              style={{ width: 28, height: 28, imageRendering: 'pixelated' }}
+                            />
+                            <span className="text-blue-100 text-sm truncate">{session.game_name}</span>
+                          </div>
                           <div className="flex items-center gap-1.5 shrink-0">
                             <span className="text-blue-500" style={{ fontSize: '11px' }}>{formatDate(session.date)}</span>
                             <span className="text-blue-500 text-sm">→</span>
