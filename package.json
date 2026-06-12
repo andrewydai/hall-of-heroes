@@ -10,7 +10,7 @@
     "preview": "wrangler pages dev dist",
     "deploy": "npm run build && wrangler pages deploy dist",
     "db:migrate": "wrangler d1 execute tabletop-tales-db --local --file=workers/schema.sql",
-    "db:migrate:remote": "wrangler d1 execute tabletop-tales-db --file=workers/schema.sql",
+    "db:migrate:remote": "wrangler d1 execute tabletop-tales-db --remote --file=workers/schema.sql",
     "db:seed": "npx tsx workers/seed.ts",
     "db:seed:remote": "npx tsx workers/seed.ts --remote"
   },

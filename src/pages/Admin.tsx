@@ -56,7 +56,7 @@ function AdminGate({ children }: { children: React.ReactNode }) {
               onChange={e => setPasscode(e.target.value)}
               placeholder="Admin passcode"
               autoFocus
-              className={inp + ' text-center tracking-widest'} style={inpStyle}
+              className={inp + ' text-center tracking-widest'}
               style={inpStyle}
             />
             {error && <p className="text-red-400 text-xs text-center">{error}</p>}
