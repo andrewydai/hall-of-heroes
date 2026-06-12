@@ -1,14 +1,14 @@
 import { Hono } from 'hono'
-import { handle } from 'hono/cloudflare-pages'
 import { getCookie, setCookie } from 'hono/cookie'
 import type { MiddlewareHandler } from 'hono'
-import type { D1Database } from '@cloudflare/workers-types'
+import type { D1Database, Fetcher } from '@cloudflare/workers-types'
 import type { CreateSessionPayload } from '../../src/types/index'
 
 type Bindings = {
   DB: D1Database
   PASSCODE: string
   ADMIN_PASSCODE: string
+  ASSETS: Fetcher
 }
 
 const app = new Hono<{ Bindings: Bindings }>().basePath('/api')
@@ -704,6 +704,8 @@ app.get('/trivia/leaderboard', async (c) => {
   return c.json(results)
 })
 
-// `handle` correctly unpacks the Pages EventContext ({ request, env, ... })
-// into the (request, env, ctx) signature that Hono's fetch expects.
-export const onRequest = handle(app)
+// Pass unmatched routes to the asset server so React Router's client-side
+// routes (e.g. /sessions, /players/:id) still receive index.html.
+app.get('*', (c) => c.env.ASSETS.fetch(c.req.raw))
+
+export default app
