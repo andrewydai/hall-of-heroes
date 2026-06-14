@@ -160,6 +160,7 @@ export interface TriviaStatus {
   q1_correct: number | null
   q2_correct: number | null
   q3_correct: number | null
+  correct: { q1: string; q2: string; q3: string } | null
 }
 
 export interface TriviaResult {

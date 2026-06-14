@@ -295,145 +295,146 @@ export default function TriviaPage() {
 
   const allAnswered = q1 !== null && q2 !== null && q3 !== null
 
+  const isRevealed = phase === 'done' || phase === 'already_played'
+  const correctValues = phase === 'done'
+    ? (result?.correct ?? null)
+    : (prevStatus?.correct ?? null)
+
   return (
     <PageLayout>
       <h1 className="font-jacquard text-tavern-gold mb-1" style={{ fontSize: '2.2rem' }}>Trivia</h1>
       <p className="text-blue-500 text-xs mb-6">{trivia.date}</p>
 
-      {/* ── Player select ── */}
-      {phase === 'select' && (
-        <div className="flex flex-col gap-4">
-          <p className="text-blue-300 text-sm">Who are you?</p>
-          <div className="flex flex-col gap-2">
-            {players.map(p => (
-              <button
-                key={p.id}
-                onClick={() => handlePlayerSelect(p)}
-                disabled={checking}
-                className="flex items-center gap-3 rounded-lg px-3 py-3 border border-blue-900/60 hover:border-blue-700 transition-colors text-left disabled:opacity-50"
-                style={{ background: 'rgba(6,10,35,0.8)' }}
+      <div className="flex flex-col gap-6">
+
+        {/* ── Quote — always visible ── */}
+        <div
+          className="rounded-lg border border-blue-900/60 p-4"
+          style={{ background: 'rgba(6,10,35,0.8)' }}
+        >
+          <div className="flex items-center justify-between mb-3">
+            <span className="text-blue-500 text-xs uppercase tracking-widest">Today's Quote</span>
+            {trivia.game_type === 'cooperative' && (
+              <span
+                className="text-xs border rounded px-2 py-0.5"
+                style={{ borderColor: Q.q2.borderIdle, color: Q.q2.header }}
               >
-                <img
-                  src={resolveAvatar(p.avatar_url)}
-                  alt=""
-                  className="w-8 h-8 rounded object-contain border border-blue-800 shrink-0"
-                  style={{ imageRendering: 'pixelated', background: 'rgba(6,10,35,0.8)' }}
-                />
-                <span className="text-blue-100 text-sm">{p.display_name ?? p.name}</span>
-              </button>
-            ))}
-          </div>
-          {checking && <LoadingSpinner message="Checking…" />}
-          {error && <p className="text-red-400 text-xs text-center">{error}</p>}
-        </div>
-      )}
-
-      {/* ── Already played ── */}
-      {phase === 'already_played' && me && prevStatus && (
-        <div className="flex flex-col gap-6">
-          <div
-            className="rounded-lg border border-tavern-gold/40 px-4 py-5 text-center"
-            style={{ background: 'rgba(6,10,35,0.8)' }}
-          >
-            <p className="text-blue-400 text-xs uppercase tracking-widest mb-1">You already played today</p>
-            <p className="font-jacquard text-tavern-gold mb-3" style={{ fontSize: '2.5rem' }}>
-              {prevStatus.score}/3
-            </p>
-            <div className="px-2">
-              <ScoreBar
-                q1={prevStatus.q1_correct === 1}
-                q2={prevStatus.q2_correct === 1}
-                q3={prevStatus.q3_correct === 1}
-              />
-              <div className="flex gap-0.5 mt-1">
-                {(['q1','q2','q3'] as QKey[]).map(k => (
-                  <div key={k} className="flex-1 text-center" style={{ fontSize: '9px', color: Q[k].header }}>
-                    {k === 'q2' && trivia.game_type === 'cooperative' ? 'RESULT' : Q[k].staticLabel}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <p className="text-xs text-blue-400 uppercase tracking-widest mb-3">Today's Leaderboard</p>
-            {leaderboard && (
-              <TriviaLeaderboard entries={leaderboard} myPlayerId={me.id} gameType={trivia.game_type} />
+                Co-op
+              </span>
             )}
           </div>
+          <p className="text-blue-100 text-sm italic leading-relaxed break-words">
+            "{trivia.quote}"
+          </p>
         </div>
-      )}
 
-      {/* ── Playing + Done ── */}
-      {(phase === 'playing' || phase === 'done') && (
-        <div className="flex flex-col gap-6">
+        {/* ── 3×3 grid — always visible ── */}
+        <TriviaGrid
+          trivia={trivia}
+          q1={q1} q2={q2} q3={q3}
+          setQ1={setQ1} setQ2={setQ2} setQ3={setQ3}
+          revealed={isRevealed}
+          correctValues={correctValues}
+        />
 
-          {/* Quote */}
-          <div
-            className="rounded-lg border border-blue-900/60 p-4"
-            style={{ background: 'rgba(6,10,35,0.8)' }}
-          >
-            <div className="flex items-center justify-between mb-3">
-              <span className="text-blue-500 text-xs uppercase tracking-widest">Today's Quote</span>
-              {trivia.game_type === 'cooperative' && (
-                <span
-                  className="text-xs border rounded px-2 py-0.5"
-                  style={{ borderColor: Q.q2.borderIdle, color: Q.q2.header }}
+        {/* ── Player select ── */}
+        {phase === 'select' && (
+          <div className="flex flex-col gap-4">
+            <p className="text-blue-300 text-sm">Who are you?</p>
+            <div className="flex flex-col gap-2">
+              {players.map(p => (
+                <button
+                  key={p.id}
+                  onClick={() => handlePlayerSelect(p)}
+                  disabled={checking}
+                  className="flex items-center gap-3 rounded-lg px-3 py-3 border border-blue-900/60 hover:border-blue-700 transition-colors text-left disabled:opacity-50"
+                  style={{ background: 'rgba(6,10,35,0.8)' }}
                 >
-                  Co-op
-                </span>
+                  <img
+                    src={resolveAvatar(p.avatar_url)}
+                    alt=""
+                    className="w-8 h-8 rounded object-contain border border-blue-800 shrink-0"
+                    style={{ imageRendering: 'pixelated', background: 'rgba(6,10,35,0.8)' }}
+                  />
+                  <span className="text-blue-100 text-sm">{p.display_name ?? p.name}</span>
+                </button>
+              ))}
+            </div>
+            {checking && <LoadingSpinner message="Checking…" />}
+            {error && <p className="text-red-400 text-xs text-center">{error}</p>}
+          </div>
+        )}
+
+        {/* ── Submit ── */}
+        {phase === 'playing' && (
+          <>
+            {error && <p className="text-red-400 text-sm text-center -mb-2">{error}</p>}
+            <button
+              onClick={handleSubmit}
+              disabled={!allAnswered || submitting}
+              className="w-full border border-tavern-gold/60 text-tavern-gold rounded py-3 hover:bg-tavern-gold/10 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+              style={{ background: 'rgba(6,10,35,0.8)', fontFamily: "'Pixelify Sans', sans-serif", fontSize: '13px' }}
+            >
+              {submitting ? 'Submitting…' : allAnswered ? 'Submit Answers' : 'Answer All 3 Questions'}
+            </button>
+          </>
+        )}
+
+        {/* ── Score summary + leaderboard (done) ── */}
+        {phase === 'done' && result && me && (
+          <div className="flex flex-col gap-6">
+            <div
+              className="rounded-lg border border-tavern-gold/40 px-4 py-5 text-center"
+              style={{ background: 'rgba(6,10,35,0.8)' }}
+            >
+              <p className="text-blue-400 text-xs uppercase tracking-widest mb-1">Your Score</p>
+              <p className="font-jacquard text-tavern-gold" style={{ fontSize: '2.5rem' }}>
+                {result.score}/3
+              </p>
+            </div>
+            <div>
+              <p className="text-xs text-blue-400 uppercase tracking-widest mb-3">Today's Leaderboard</p>
+              <TriviaLeaderboard entries={leaderboard ?? []} myPlayerId={me.id} gameType={trivia.game_type} />
+            </div>
+          </div>
+        )}
+
+        {/* ── Already played summary + leaderboard ── */}
+        {phase === 'already_played' && me && prevStatus && (
+          <div className="flex flex-col gap-6">
+            <div
+              className="rounded-lg border border-tavern-gold/40 px-4 py-5 text-center"
+              style={{ background: 'rgba(6,10,35,0.8)' }}
+            >
+              <p className="text-blue-400 text-xs uppercase tracking-widest mb-1">You already played today</p>
+              <p className="font-jacquard text-tavern-gold mb-3" style={{ fontSize: '2.5rem' }}>
+                {prevStatus.score}/3
+              </p>
+              <div className="px-2">
+                <ScoreBar
+                  q1={prevStatus.q1_correct === 1}
+                  q2={prevStatus.q2_correct === 1}
+                  q3={prevStatus.q3_correct === 1}
+                />
+                <div className="flex gap-0.5 mt-1">
+                  {(['q1','q2','q3'] as QKey[]).map(k => (
+                    <div key={k} className="flex-1 text-center" style={{ fontSize: '9px', color: Q[k].header }}>
+                      {k === 'q2' && trivia.game_type === 'cooperative' ? 'RESULT' : Q[k].staticLabel}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div>
+              <p className="text-xs text-blue-400 uppercase tracking-widest mb-3">Today's Leaderboard</p>
+              {leaderboard && (
+                <TriviaLeaderboard entries={leaderboard} myPlayerId={me.id} gameType={trivia.game_type} />
               )}
             </div>
-            <p className="text-blue-100 text-sm italic leading-relaxed break-words">
-              "{trivia.quote}"
-            </p>
           </div>
+        )}
 
-          {/* 3×3 grid */}
-          <TriviaGrid
-            trivia={trivia}
-            q1={q1} q2={q2} q3={q3}
-            setQ1={setQ1} setQ2={setQ2} setQ3={setQ3}
-            revealed={phase === 'done'}
-            correctValues={result?.correct ?? null}
-          />
-
-          {/* Submit */}
-          {phase === 'playing' && (
-            <>
-              {error && <p className="text-red-400 text-sm text-center -mb-2">{error}</p>}
-              <button
-                onClick={handleSubmit}
-                disabled={!allAnswered || submitting}
-                className="w-full border border-tavern-gold/60 text-tavern-gold rounded py-3 hover:bg-tavern-gold/10 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
-                style={{ background: 'rgba(6,10,35,0.8)', fontFamily: "'Pixelify Sans', sans-serif", fontSize: '13px' }}
-              >
-                {submitting ? 'Submitting…' : allAnswered ? 'Submit Answers' : 'Answer All 3 Questions'}
-              </button>
-            </>
-          )}
-
-          {/* Score summary + leaderboard */}
-          {phase === 'done' && result && me && (
-            <div className="flex flex-col gap-6">
-              <div
-                className="rounded-lg border border-tavern-gold/40 px-4 py-5 text-center"
-                style={{ background: 'rgba(6,10,35,0.8)' }}
-              >
-                <p className="text-blue-400 text-xs uppercase tracking-widest mb-1">Your Score</p>
-                <p className="font-jacquard text-tavern-gold" style={{ fontSize: '2.5rem' }}>
-                  {result.score}/3
-                </p>
-              </div>
-
-              <div>
-                <p className="text-xs text-blue-400 uppercase tracking-widest mb-3">Today's Leaderboard</p>
-                <TriviaLeaderboard entries={leaderboard ?? []} myPlayerId={me.id} gameType={trivia.game_type} />
-              </div>
-            </div>
-          )}
-        </div>
-      )}
+      </div>
     </PageLayout>
   )
 }

@@ -646,12 +646,27 @@ app.get('/trivia/status/:player_id', async (c) => {
     'SELECT score, q1_correct, q2_correct, q3_correct FROM trivia_scores WHERE date = ? AND player_id = ?'
   ).bind(today, player_id).first<{ score: number; q1_correct: number; q2_correct: number; q3_correct: number }>()
 
+  if (!row) {
+    return c.json({ played: false, score: null, q1_correct: null, q2_correct: null, q3_correct: null, correct: null })
+  }
+
+  // Return correct answers so already-played view can reveal them
+  const data = await getTodayTriviaSession(c.env.DB)
+  const correct = data ? (() => {
+    const { session } = data
+    const q2 = session.game_type === 'cooperative'
+      ? (session.coop_result ?? '')
+      : (session.victor_names ?? '').split(',').map((n: string) => n.trim()).filter(Boolean).join(' & ')
+    return { q1: session.game_id, q2, q3: session.date }
+  })() : null
+
   return c.json({
-    played:     !!row,
-    score:      row?.score      ?? null,
-    q1_correct: row?.q1_correct ?? null,
-    q2_correct: row?.q2_correct ?? null,
-    q3_correct: row?.q3_correct ?? null,
+    played:     true,
+    score:      row.score,
+    q1_correct: row.q1_correct,
+    q2_correct: row.q2_correct,
+    q3_correct: row.q3_correct,
+    correct,
   })
 })
 
