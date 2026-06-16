@@ -499,14 +499,26 @@ function getDayIndex(dateStr: string): number {
   return Math.max(0, Math.floor((today - epoch) / 86400000))
 }
 
+// FNV-1a hash — disperses date strings across the full 32-bit range so the
+// LCG starting state isn't clustered in the ~20M range (which caused the
+// seededShuffle to always land the correct answer in the same slot).
 function dateSeed(dateStr: string): number {
-  return parseInt(dateStr.replace(/-/g, ''), 10)
+  let h = 2166136261 >>> 0
+  for (let i = 0; i < dateStr.length; i++) {
+    h ^= dateStr.charCodeAt(i)
+    h = Math.imul(h, 16777619) >>> 0
+  }
+  return h
 }
 
+// xorshift32 — no short-range correlation (LCG seeds that differ by a small
+// offset like 10/20/30 produce nearly identical first outputs, biasing the shuffle).
 function makeRng(seed: number): () => number {
-  let s = seed >>> 0
+  let s = (seed >>> 0) || 1  // avoid 0 which is a fixed point
   return () => {
-    s = ((Math.imul(s, 1664525) + 1013904223) >>> 0)
+    s ^= s << 13; s >>>= 0
+    s ^= s >>> 17
+    s ^= s << 5;  s >>>= 0
     return s / 4294967296
   }
 }
@@ -575,18 +587,23 @@ app.get('/trivia/today', async (c) => {
   if (!data) return c.json({ error: 'No trivia sessions available' }, 404)
 
   const { session, today } = data
-  const seed = dateSeed(today)
+
+  // Each column gets an independent seed derived from date + column name so
+  // that close numeric offsets (seed+10, seed+20…) can't correlate the shuffles.
+  const s1 = dateSeed(today + 'q1')
+  const s2 = dateSeed(today + 'q2')
+  const s3 = dateSeed(today + 'q3')
 
   // Q1: game choices — correct + 2 wrong from other games
   const { results: allGames } = await db.prepare(
     'SELECT id, name FROM games WHERE id != ? ORDER BY id'
   ).bind(session.game_id).all<{ id: string; name: string }>()
 
-  const wrongGames = seededPick(allGames, 2, seed + 1)
+  const wrongGames = seededPick(allGames, 2, dateSeed(today + 'pick1'))
   const q1Choices = seededShuffle([
     { value: session.game_id, label: session.game_name },
     ...wrongGames.map(g => ({ value: g.id, label: g.name })),
-  ], seed + 10)
+  ], s1)
 
   // Q2: victor / coop result choices
   let q2Choices: Array<{ value: string; label: string }>
@@ -596,7 +613,7 @@ app.get('/trivia/today', async (c) => {
       { value: 'win',         label: 'Victory'     },
       { value: 'loss',        label: 'Defeat'      },
       { value: 'in_progress', label: 'In Progress' },
-    ], seed + 20)
+    ], s2)
   } else {
     const victorLabel = (session.victor_names ?? '')
       .split(',').map((n: string) => n.trim()).filter(Boolean).join(' & ')
@@ -608,12 +625,12 @@ app.get('/trivia/today', async (c) => {
     const winnerSet = new Set(
       (session.victor_names ?? '').split(',').map((n: string) => n.trim()).filter(Boolean)
     )
-    const wrongPlayers = seededPick(allPlayers.filter(p => !winnerSet.has(p.label)), 2, seed + 21)
+    const wrongPlayers = seededPick(allPlayers.filter(p => !winnerSet.has(p.label)), 2, dateSeed(today + 'pick2'))
 
     q2Choices = seededShuffle([
       { value: victorLabel, label: victorLabel },
       ...wrongPlayers.map(p => ({ value: p.label, label: p.label })),
-    ], seed + 20)
+    ], s2)
   }
 
   // Q3: date choices — correct + 2 wrong from other session dates
@@ -621,11 +638,11 @@ app.get('/trivia/today', async (c) => {
     'SELECT DISTINCT date FROM sessions WHERE id != ? ORDER BY id'
   ).bind(session.id).all<{ date: string }>()
 
-  const wrongDates = seededPick(otherDates, 2, seed + 3)
+  const wrongDates = seededPick(otherDates, 2, dateSeed(today + 'pick3'))
   const q3Choices = seededShuffle([
     { value: session.date, label: formatTriviaDate(session.date) },
     ...wrongDates.map(d => ({ value: d.date, label: formatTriviaDate(d.date) })),
-  ], seed + 30)
+  ], s3)
 
   return c.json({
     date:        today,
